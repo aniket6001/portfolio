@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Numbers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f2f2f2;
+    }
+
+    .calculator {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Add Two Numbers</h2>
+    <input id="num1" type="number" placeholder="Enter first number"><br>
+    <input id="num2" type="number" placeholder="Enter second number"><br>
+    <button onclick="addNumbers()">Add</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function addNumbers() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('result').innerText = "❌ Please enter valid numbers.";
+        return;
+      }
+
+      const sum = num1 + num2;
+      document.getElementById('result').innerText = `✅ Result: ${sum}`;
+    }
+  </script>
+
+</body>
+</html>
